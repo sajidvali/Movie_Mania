@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+{% load bootstrap4 %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Mania</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/header.css" %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+        <a id="homelink" class="navbar-brand d-inline-block align-top" href="{% url "login" %}">
+            <img src="{% static "images/moviereview.png" %}" width="90" height="35" alt="">
+            <span>Grammar Expert</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link pr-5"  href="{% url "main" %}">Search</a>
+        <a class="nav-item nav-link pr-2" href="{% url "logout" %}">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <p>Please enter the valid details in the form</p>
+   <h1>Thank You</h1>
+</body>
+</html>

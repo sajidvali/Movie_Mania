@@ -1,0 +1,61 @@
+
+<!DOCTYPE html> 
+{% load bootstrap4 %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Mania</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/header.css" %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+        <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+            <a id="homelink" class="navbar-brand d-inline-block align-top" href="{% url "login" %}">
+                <img src="{% static "images/moviereview.png" %}" width="90" height="35" alt="">
+                <span>Movie Mania</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class = "nav-item nav-link pr-2" href = "{% url "wishlist" %}">ADD WISHLIST</a>
+              <a class = "nav-item nav-link pr-2" href = "{% url "watchlater" %}">WATCH LATER</a>
+              <a class="nav-item nav-link pr-2" href="{% url "logout" %}">LOGOUT</a>
+              {% comment %} <a class="nav-item nav-link pr-2" href="{% url "main" %}">Search</a> {% endcomment %}
+            </div>
+          </div>
+        </nav>
+    </body>
+<body>
+    <div style="background-color:lightblue;">
+    <h2 style="color:black";>Movie Review</h2>
+    <div class = "movie d-flex container">
+        <img class = "poster my-auto" src = '{{ poster}}'>
+        <div class = 'container'>
+                <p><b>Rating:</b><b>{{ imdbrating }}</p>
+                <p>Genre:<b>{{ genre }}</b></p>
+                <p>Movie Name:<b>{{ movie_name }}</b></p>
+                <p>Year:<b>{{ year }}</b></p>
+                <p>Plot:<b>{{ plot }}</b></p>
+                <p>Relased Date: <b>{{ released }}</b></p>
+                <p>Runtime:<b>{{ runtime }}</b></p>
+                <p>Writer:<b>{{ writer }}</b></p>
+                <p>Director:<b>{{ director }}</b></p>
+                <p>Actors:<b>{{ actors }}</b></p>
+                <p>Country:<b>{{ country }}</b></p>
+                <p>Language:<b>{{ language }}</b></p>
+        </div>
+    </div>
+    <div class="card card-create-user mt-3">
+            <div class="card-body text-center">
+                Search for another Movie?
+                <a href="{% url "main" %}" class="card-link">Search</a>
+            </div>
+</div>
+</body>
+</html>
