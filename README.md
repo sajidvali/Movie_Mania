@@ -1,4 +1,2 @@
 # Movie-Review
-This project helps the users to know the review of the movie and all the details of the movie
-User must have the account to login into the application
-"# Movie_Mania" 
+This is a simple django application where the user logs in and searches for a movie details and its review. It internally uses IMDB API for making queries and fetching the movie details as a JSON object.
